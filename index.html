@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic Tac Toe</h1>
+
+      <!-- The message below will note the status of the sign in/sign up process -->
+      <p id="status-message"></p>
+
+      <section>
+        <form id="sign-up">
+          <h4>Sign-Up:</h4>
+          <input name="credentials[email]" type="email" required placeholder="Email">
+          <input name="credentials[password]" type="password" required placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
+          <button type="submit">Sign Up</button>
+        </form>
+      </section>
+
+      <section>
+        <form id='sign-in'>
+          <h4>Sign-In:</h4>
+          <input name="credentials[email]" type="text" required placeholder="Email">
+          <input name="credentials[password]" type="password" required placeholder="Password">
+          <button type="submit">Sign In</button>
+        </form>
+      </section>
+
+      <section>
+        <form id="change-password">
+          <h4>Change Password:</h4>
+          <input name="passwords[old]" type="password" required placeholder="Old Password">
+          <input name="passwords[new]" type="password" required placeholder="New Password">
+          <button type="submit">Change Password</button>
+        </form>
+      </section>
+
+      <section>
+        <button id="sign-out">Sign Out</button>
+      </section>
+
     </body>
 </html>
