@@ -1,1 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
+
+.square {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  height: 50px;
+  justify-content: center;
+}
