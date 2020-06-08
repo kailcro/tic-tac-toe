@@ -2,8 +2,8 @@
 
 const store = require('./../store')
 
-const onSignUpSuccess = function (responseData) {
-  $('#message').text('Hello ' + responseData.user.email + ", you've successfully signed up!")
+const onSignUpSuccess = function (data) {
+  $('#message').text('Hello ' + data.user.email + ", you've successfully signed up!")
 }
 
 const onSignUpFail = function () {
@@ -11,10 +11,10 @@ const onSignUpFail = function () {
   $('form').trigger('reset')
 }
 
-const onSignInSuccess = function (responseData) {
-  $('#message').text('Hello ' + responseData.user.email + ", you've successfully signed in!")
+const onSignInSuccess = function (data) {
+  $('#message').text('Hello ' + data.user.email + ", you've successfully signed in!")
   $('form').trigger('reset')
-  store.user = responseData.user
+  store.user = data.user
 }
 
 const onSignInFail = function () {
@@ -33,13 +33,11 @@ const onChangePasswordFail = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#messsage').text('Sign out complete')
-  $('form').trigger('reset')
+  $('#message').text('Sign out complete')
 }
 
 const onSignOutFail = function () {
-  $('#messsage').text('Sign out failed')
-  $('form').trigger('reset')
+  $('#message').text('Sign out failed')
 }
 
 module.exports = {

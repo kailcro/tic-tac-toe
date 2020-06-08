@@ -51,23 +51,36 @@
       <div class="container">
         <h3>Board:</h3>
         <div class="row" id="board">
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
-          <div class="col-4 square"></div>
+          <div class="col-4 square" data-index=0></div>
+          <div class="col-4 square" data-index=1></div>
+          <div class="col-4 square" data-index=2></div>
+          <div class="col-4 square" data-index=3></div>
+          <div class="col-4 square" data-index=4></div>
+          <div class="col-4 square" data-index=5></div>
+          <div class="col-4 square" data-index=6></div>
+          <div class="col-4 square" data-index=7></div>
+          <div class="col-4 square" data-index=8></div>
         </div>
       </div>
 
+      <section>
+        <button id="games-create">Create a game</button>
+      </section>
+<br>
     <section>
       <button id="games-index">Get all games</button>
     </section>
-
+<br>
+    <section>
+      <h4>Find one game:</h4>
+      <form id="game-show">
+        <input required placeholder="Game ID" name="games[id]" type="text">
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+<br>
     <section id="game-content"></section>
+
 
     </body>
 </html>
