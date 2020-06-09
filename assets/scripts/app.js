@@ -4,10 +4,14 @@ const gameEvents = require('./games/events.js')
 const authEvents = require('./auth/events.js')
 
 $(() => {
+  // Authorization:
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+  $('div.loggedin-view').hide()
+
+  // Game Related:
   $('#games-create').on('click', gameEvents.onCreateGame)
   $('#games-index').on('click', gameEvents.onIndexGames)
   $('#game-show').on('submit', gameEvents.onShowGame)

@@ -36,15 +36,11 @@ const showGameFail = function () {
   $('#message').text('Show one Game failed.').show()
 }
 
-const checkWinner = function () {
-  // if (data-index=0, data-index=1, data-index=3 === 'x')
-}
 module.exports = {
   createGameSuccess,
   createGameFail,
   indexSuccess,
   indexFail,
   showGameSuccess,
-  showGameFail,
-  checkWinner
+  showGameFail
 }

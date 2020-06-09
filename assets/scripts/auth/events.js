@@ -11,10 +11,21 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFail)
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#board').show()
+  $('#games-create').show()
+  $('#games-index').show()
+  $('#game-show').show()
+  $('#game-content').show()
+  $('#sign-up').hide()
 }
 
 const onSignIn = function (event) {
   event.preventDefault()
+  $('div.loggedin-view').show()
+  $('div.frontlogin-view').hide()
+
   const form = event.target
   const data = getFormFields(form)
   api.signIn(data)
@@ -33,6 +44,8 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+  $('div.loggedin-view').hide()
+  $('div.frontlogin-view').show()
   const form = event.target
   const data = getFormFields(form)
   api.signOut(data)
