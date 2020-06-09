@@ -21,6 +21,14 @@ const onSignUp = function (event) {
   $('#sign-up').hide()
 }
 
+const onSwitchToSignIn = function () {
+  event.preventDefault()
+  $('div.loggedin-view').hide()
+  $('div.frontlogin-view').show()
+  $('div.signin-signup-toggle').hide()
+  $('div.signup-view').hide()
+}
+
 const onSignIn = function (event) {
   event.preventDefault()
   $('div.loggedin-view').show()
@@ -57,5 +65,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onSwitchToSignIn
 }
