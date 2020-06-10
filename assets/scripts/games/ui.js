@@ -4,6 +4,7 @@ const createGameSuccess = function (data) {
   $('form').trigger('reset')
   $('#message').text('Created your game successfully!')
   store.games = data.games
+  event.target.innerHTML
 }
 
 const createGameFail = function () {

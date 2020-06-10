@@ -12,6 +12,8 @@ $(() => {
   $('div.loggedin-view').hide()
   $('div.frontlogin-view').hide()
   $('div.signin-signup-toggle').on('click', authEvents.onSwitchToSignIn)
+  $('div.move-to-signup').on('click', authEvents.onSwitchToSignUp)
+
   // Game Related:
   $('#games-create').on('click', gameEvents.onCreateGame)
   $('#games-index').on('click', gameEvents.onIndexGames)

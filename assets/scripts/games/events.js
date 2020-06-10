@@ -13,7 +13,8 @@ const onCreateGame = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+
+// FIX THIS BUTTON
   api.createGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFail)
@@ -44,10 +45,9 @@ const onShowGame = function (event) {
 // Use a counter which is used to decide on draw
 const onClicked = function (event) {
   event.preventDefault()
-  event.target.innerHTML = turn ? 'x' : 'o'
+  event.target.innerHTML = turn ? '🍕' : '🎱'
   const cell = event.target.dataset.index
-  store.cells[cell] = turn ? 'x' : 'o'
-  console.log(`this is cells`, store.cells)
+  store.cells[cell] = turn ? '🍕' : '🎱'
   turn = !turn
   store.counterForDraw.push(cell)
   checkWinner()
@@ -55,53 +55,53 @@ const onClicked = function (event) {
 
 // Checks to see if there was a winner
 const checkWinner = function () {
-  if (store.cells[0] === 'x' && store.cells[1] === 'x' && store.cells[2] === 'x') {
+  if (store.cells[0] === '🍕' && store.cells[1] === '🍕' && store.cells[2] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[3] === '🍕' && store.cells[4] === '🍕' && store.cells[5] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[6] === '🍕' && store.cells[7] === '🍕' && store.cells[8] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[0] === '🍕' && store.cells[3] === '🍕' && store.cells[6] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[1] === '🍕' && store.cells[4] === '🍕' && store.cells[7] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[2] === '🍕' && store.cells[5] === '🍕' && store.cells[8] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[0] === '🍕' && store.cells[4] === '🍕' && store.cells[8] === '🍕') {
+    $('#message').text('🍕 Wins!')
+    gameOver()
+  } else if (store.cells[2] === '🍕' && store.cells[4] === '🍕' && store.cells[6] === '🍕') {
     $('#message').text('X Wins!')
     gameOver()
-  } else if (store.cells[3] === 'x' && store.cells[4] === 'x' && store.cells[5] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[0] === '🎱' && store.cells[1] === '🎱' && store.cells[2] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[6] === 'x' && store.cells[7] === 'x' && store.cells[8] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[3] === '🎱' && store.cells[4] === '🎱' && store.cells[5] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[0] === 'x' && store.cells[3] === 'x' && store.cells[6] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[6] === '🎱' && store.cells[7] === '🎱' && store.cells[8] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[1] === 'x' && store.cells[4] === 'x' && store.cells[7] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[0] === '🎱' && store.cells[3] === '🎱' && store.cells[6] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[2] === 'x' && store.cells[5] === 'x' && store.cells[8] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[1] === '🎱' && store.cells[4] === '🎱' && store.cells[7] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[0] === 'x' && store.cells[4] === 'x' && store.cells[8] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[2] === '🎱' && store.cells[5] === '🎱' && store.cells[8] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[2] === 'x' && store.cells[4] === 'x' && store.cells[6] === 'x') {
-    $('#message').text('X Wins!')
+  } else if (store.cells[0] === '🎱' && store.cells[4] === '🎱' && store.cells[8] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
-  } else if (store.cells[0] === 'o' && store.cells[1] === 'o' && store.cells[2] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[3] === 'o' && store.cells[4] === 'o' && store.cells[5] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[6] === 'o' && store.cells[7] === 'o' && store.cells[8] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[0] === 'o' && store.cells[3] === 'o' && store.cells[6] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[1] === 'o' && store.cells[4] === 'o' && store.cells[7] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[2] === 'o' && store.cells[5] === 'o' && store.cells[8] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[0] === 'o' && store.cells[4] === 'o' && store.cells[8] === 'o') {
-    $('#message').text('O Wins!')
-    gameOver()
-  } else if (store.cells[2] === 'o' && store.cells[4] === 'o' && store.cells[6] === 'o') {
-    $('#message').text('O Wins!')
+  } else if (store.cells[2] === '🎱' && store.cells[4] === '🎱' && store.cells[6] === '🎱') {
+    $('#message').text('🎱 Wins!')
     gameOver()
   } else if (store.counterForDraw.length > 8) {
     $('#message').text("It's a draw!")

@@ -12,7 +12,7 @@ const onSignUpFail = function () {
 }
 
 const onSignInSuccess = function (data) {
-  $('#message').text('Hello ' + data.user.email + ", you've successfully signed in!")
+  $('#message').text('Welcome, ' + data.user.email + '!')
   $('form').trigger('reset')
   store.user = data.user
 }

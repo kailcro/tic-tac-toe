@@ -11,14 +11,18 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFail)
-  $('#change-password').show()
-  $('#sign-out').show()
-  $('#board').show()
-  $('#games-create').show()
-  $('#games-index').show()
-  $('#game-show').show()
-  $('#game-content').show()
-  $('#sign-up').hide()
+  // $('#change-password').show()
+  // $('#sign-out').show()
+  // $('#board').show()
+  // $('#games-create').show()
+  // $('#games-index').show()
+  // $('#game-show').show()
+  // $('#game-content').show()
+  // $('#sign-up').hide()
+  $('div.signup-view').hide()
+  $('div.frontlogin-view').show()
+  $('div.loggedin-view').hide()
+  $('div.signin-signup-toggle').hide()
 }
 
 const onSwitchToSignIn = function () {
@@ -39,6 +43,14 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFail)
+}
+
+const onSwitchToSignUp = function () {
+  event.preventDefault()
+  $('div.loggedin-view').hide()
+  $('div.frontlogin-view').hide()
+  $('div.signin-signup-toggle').show()
+  $('div.signup-view').show()
 }
 
 const onChangePassword = function (event) {
@@ -66,5 +78,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onSwitchToSignIn
+  onSwitchToSignIn,
+  onSwitchToSignUp
 }
