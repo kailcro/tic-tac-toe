@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store')
+const eventGames = require('./../games/events.js')
 
 const onSignUpSuccess = function (data) {
   $('#message').text('Hello ' + data.user.email + ", you've successfully signed up!")
@@ -15,6 +16,7 @@ const onSignInSuccess = function (data) {
   $('#message').text('Welcome, ' + data.user.email + '!')
   $('form').trigger('reset')
   store.user = data.user
+  eventGames.onCreateGame()
 }
 
 const onSignInFail = function () {

@@ -1,10 +1,10 @@
 const store = require('./../store')
 
 const createGameSuccess = function (data) {
-  $('form').trigger('reset')
+  console.log(`this is data inside create game success`, data)
   $('#message').text('Created your game successfully!')
-  store.games = data.games
-  event.target.innerHTML
+  store.game = data.game
+  console.log(`this is store inside create game success`, store)
 }
 
 const createGameFail = function () {
@@ -37,11 +37,22 @@ const showGameFail = function () {
   $('#message').text('Show one Game failed.').show()
 }
 
+const updateGameFail = function () {
+  $('#message').text('Game move failed.').show()
+}
+
+const updateGameSuccess = function (data) {
+  store.games = data.games
+  console.log(`this is data inside updateGameSuccess`, data)
+}
+
 module.exports = {
   createGameSuccess,
   createGameFail,
   indexSuccess,
   indexFail,
   showGameSuccess,
-  showGameFail
+  showGameFail,
+  updateGameFail,
+  updateGameSuccess
 }

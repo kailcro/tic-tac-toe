@@ -12,6 +12,28 @@ const createGame = function (data) {
   })
 }
 
+const updateGame = function (cell, value) {
+  console.log(`this is cell inside update game:`, cell)
+  console.log(`this is store inside update game:`, store)
+
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: cell,
+          value: value
+        },
+        over: store.game.over
+      }
+    }
+  })
+}
+
 const indexGames = function () {
   return $.ajax({
     method: 'GET',
@@ -35,5 +57,6 @@ const showGame = function (gameID) {
 module.exports = {
   createGame,
   indexGames,
-  showGame
+  showGame,
+  updateGame
 }
