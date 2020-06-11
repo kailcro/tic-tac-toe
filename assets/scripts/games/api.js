@@ -13,8 +13,7 @@ const createGame = function (data) {
 }
 
 const updateGame = function (cell, value, over) {
-  console.log(`this is cell inside update game:`, cell)
-  console.log(`this is store inside update game:`, store)
+  console.log(`this is store.over inside update game:`, store.over)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,

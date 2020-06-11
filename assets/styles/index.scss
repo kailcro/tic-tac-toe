@@ -91,9 +91,18 @@ button:hover {
 }
 
 .change-password {
-  text-align: center;
+  align-items: center;
 }
 
+.sign-out {
+  text-align: right;
+  margin: -50px 50px 0 0;
+}
+
+#games-create {
+  justify-content: center;
+  align-items: center;
+}
 .move-to-signup {
   text-align: center;
 }

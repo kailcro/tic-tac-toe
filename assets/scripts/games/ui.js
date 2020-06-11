@@ -44,12 +44,8 @@ const updateGameFail = function () {
 }
 
 const updateGameSuccess = function (data) {
-  store.games = data.games
+  store.game = data.game
   console.log(`this is data inside updateGameSuccess`, data)
-}
-
-const updateTest = function (data) {
-  console.log(`this is data inside update test`, data)
 }
 
 module.exports = {
@@ -60,6 +56,5 @@ module.exports = {
   showGameSuccess,
   showGameFail,
   updateGameFail,
-  updateGameSuccess,
-  updateTest
+  updateGameSuccess
 }

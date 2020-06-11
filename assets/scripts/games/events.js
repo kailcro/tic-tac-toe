@@ -10,10 +10,6 @@ let turn = true
 
 // Create game button
 const onCreateGame = function (event) {
-  // console.log(`This is store.games in create new game BEFORE`, store.game)
-  // console.log(`This is store.cells in create new game BEFORE`, store.cells)
-  // console.log(`This is store.counter in create new game BEFORE`, store.counterForDraw)
-
   // Clear the board visually
   $('div.square').html('')
   $('div.square').css('background-color', '')
@@ -56,17 +52,17 @@ const onShowGame = function (event) {
 const onClicked = function (event) {
   if (event.target.innerHTML === '') {
     event.target.innerHTML = turn ? '🍕' : '🎱'
-    console.log(`event target`, event.target.dataset)
     const cell = event.target.dataset.index
-    const value = turn ? '🍕' : '🎱'
+    const value = turn ? 'x' : 'o'
     store.cells[cell] = turn ? '🍕' : '🎱'
     turn = !turn
     store.counterForDraw.push(cell)
-    // store.over = changeOverValue()
-    // ui.updateGameSuccess()
+    // console.log(`this is store.over in the onClicked():`, store.over)
     checkWinner()
-    api.updateGame(cell, value, store.over)
-      .then(ui.updateTest)
+    const over = store.over
+    api.updateGame(cell, value, over)
+      .then(ui.updateGameSuccess)
+      // .then(checkWinner)
       .catch(ui.updateGameFail)
   } else {
     $('#message').text('spot taken')
@@ -176,17 +172,20 @@ const checkWinner = function () {
     $('#cell-0').css('background-color', 'green')
     $('#cell-4').css('background-color', 'green')
     $('#cell-8').css('background-color', 'green')
+    store.over = true
     gameOver(store.over)
+  } else {
+    store.over = false
   }
 }
 
 // Function used to reset the board
 const gameOver = function (data) {
-  store.over = true
-  console.log(`this is store.game.over in gaemOVer`, store.game.over)
-  console.log(`this is store.game in gaemOVer`, store.over)
+  // console.log(`this is store.game.over in gaemOVer`, store.game.over)
+  // console.log(`this is store.game in gaemOVer`, store.over)
   console.log(`this is data in gaemOVer`, data)
-  setTimeout(onCreateGame, 3000)
+  // store.over = data
+  return data
 }
 
 module.exports = {

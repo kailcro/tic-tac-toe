@@ -12,7 +12,17 @@
 
     <body>
       <h1>Tic Tac Toe</h1>
+      <div class="loggedin-view">
+            <section class="sign-out">
+              <button id="sign-out">Sign Out</button>
+            </section>
+      </div>
 
+      <div class="loggedin-view">
+            <section class="games-create">
+              <button id="games-create">Start a New Game</button>
+            </section>
+      </div>
       <!-- The message below will note the status of the sign in/sign up process -->
       <p id="message"></p>
 
@@ -54,23 +64,6 @@
       </div>
     </div>
 
-  <div class="loggedin-view">
-      <section class="change-password">
-        <form id="change-password">
-          <h4>Change Password:</h4>
-          <input name="passwords[old]" type="password" required placeholder="Old Password">
-          <input name="passwords[new]" type="password" required placeholder="New Password">
-          <button type="submit">Change Password</button>
-        </form>
-      </section>
-</div>
-
-<div class="loggedin-view">
-      <section class="sign-out">
-        <button id="sign-out">Sign Out</button>
-      </section>
-</div>
-
 <div class="loggedin-view">
       <div class="container">
         <div class="row" id="board">
@@ -87,11 +80,20 @@
       </div>
 </div>
 
+<br>
+
 <div class="loggedin-view">
-      <section>
-        <button id="games-create">Start a New Game</button>
-      </section>
+    <section class="change-password">
+      <form id="change-password">
+        <h4>Change Password:</h4>
+        <input name="passwords[old]" type="password" required placeholder="Old Password">
+        <input name="passwords[new]" type="password" required placeholder="New Password">
+        <button type="submit">Change Password</button>
+      </form>
+    </section>
 </div>
+
+<br>
 
 <div class="loggedin-view">
     <section>
