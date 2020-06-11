@@ -1,7 +1,7 @@
 const store = require('./../store')
 
 const createGameSuccess = function (data) {
-  console.log(`this is data inside create game success`, data)
+  // console.log(`this is data inside create game success`, data)
   $('#message').text('Created your game successfully!')
   store.game = data.game
   console.log(`this is store inside create game success`, store)
@@ -20,6 +20,8 @@ const indexSuccess = function (responseData) {
   })
   $('#game-content').html(gameHtml)
   $('#message').text('Index sucessful.').show()
+  // console.log('Response data in indexSuccess:', responseData)
+  // console.log('ResponseData.games in indexSuccess:', responseData.games)
 }
 
 const indexFail = function () {
@@ -46,6 +48,10 @@ const updateGameSuccess = function (data) {
   console.log(`this is data inside updateGameSuccess`, data)
 }
 
+const updateTest = function (data) {
+  console.log(`this is data inside update test`, data)
+}
+
 module.exports = {
   createGameSuccess,
   createGameFail,
@@ -54,5 +60,6 @@ module.exports = {
   showGameSuccess,
   showGameFail,
   updateGameFail,
-  updateGameSuccess
+  updateGameSuccess,
+  updateTest
 }
