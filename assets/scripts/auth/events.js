@@ -44,7 +44,9 @@ const onSwitchToSignUp = function () {
   $('div.signin-signup-toggle').show()
   $('div.signup-view').show()
 }
-
+const onShowChangePw = function () {
+  $('div.changepassword-view').show()
+}
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
@@ -57,7 +59,9 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault()
   $('div.loggedin-view').hide()
+  $('.changepassword-view').hide()
   $('div.frontlogin-view').show()
+  $('#stats').hide()
   const form = event.target
   const data = getFormFields(form)
   api.signOut(data)
@@ -71,5 +75,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onSwitchToSignIn,
-  onSwitchToSignUp
+  onSwitchToSignUp,
+  onShowChangePw
 }

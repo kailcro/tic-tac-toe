@@ -21,17 +21,11 @@ const onCreateGame = function (event) {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFail)
-  // console.log(`This is store.games in create new game AFTER`, store.game)
-  // console.log(`This is store.cells in create new game AFTER`, store.cells)
-  // console.log(`This is store.counter in create new game AFTER`, store.counterForDraw)
 }
 
 // Index games button
 const onIndexGames = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.indexGames(data)
+  api.indexGames()
     .then(ui.indexSuccess)
     .catch(ui.indexFail)
 }
@@ -57,12 +51,10 @@ const onClicked = function (event) {
     store.cells[cell] = turn ? '🍕' : '🎱'
     turn = !turn
     store.counterForDraw.push(cell)
-    // console.log(`this is store.over in the onClicked():`, store.over)
     checkWinner()
     const over = store.over
     api.updateGame(cell, value, over)
       .then(ui.updateGameSuccess)
-      // .then(checkWinner)
       .catch(ui.updateGameFail)
   } else {
     $('#message').text('spot taken')
@@ -181,10 +173,7 @@ const checkWinner = function () {
 
 // Function used to reset the board
 const gameOver = function (data) {
-  // console.log(`this is store.game.over in gaemOVer`, store.game.over)
-  // console.log(`this is store.game in gaemOVer`, store.over)
   console.log(`this is data in gaemOVer`, data)
-  // store.over = data
   return data
 }
 
