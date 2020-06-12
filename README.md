@@ -20,6 +20,12 @@ With this project being my first front end application, I tried to be very metho
 - jQuery
 
 ## Unsolved Problems
+- You can sign in without correct credentials
+- Change password PATCH request fails and needs to be hidden after successful change
+- Displaying game stats only shows a portion of the correct text
+- After a game is won, the board should freeze, not allowing more clicks
+- The find one game functoinality is useless (it's currently by game id) - remove it
+- Make UI improvements
 
 ## Wireframes:
 ### Sign-In
