@@ -1,4 +1,5 @@
 const store = require('./../store')
+// const gameEvents = require('./events.js')
 
 const createGameSuccess = function (data) {
   // console.log(`this is data inside create game success`, data)
@@ -22,7 +23,7 @@ const indexSuccess = function (responseData) {
   $('#message').text('Index sucessful.').show()
 
   let xWinner = 0
-  let oWinner = 1
+  let oWinner = 0
   responseData.games.forEach(eachGame => {
     // console.log(`this is eachGame`, eachGame)
     // console.log(`this is eachGame.over`, eachGame.over)
@@ -107,8 +108,17 @@ const updateGameFail = function () {
 }
 
 const updateGameSuccess = function (data) {
+  // console.log('This is data inside updateGameSuccess', data)
+  // console.log('FUCKING PLEASEEEEE:', store.cells[cell])
+  // if (events.onClicked.event.target.innerHTML === true) {
+  // $('#message').text('yeet')
+  // } else if (turnForMessage === false) {
+  // $('#message').text('yeet')
+  // }
+  // turnForMessage = !turnForMessage
+
   store.game = data.game
-  console.log(`this is data inside updateGameSuccess`, data)
+  // console.log(`this is data inside updateGameSuccess`, data)
 }
 
 module.exports = {

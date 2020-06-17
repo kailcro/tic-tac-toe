@@ -13,13 +13,17 @@ const onSignUpFail = function () {
 }
 
 const onSignInSuccess = function (data) {
-  $('#message').text('Welcome, ' + data.user.email + '!')
+  $('div.loggedin-view').show()
+  $('div.frontlogin-view').hide()
+  $('#message').text('Welcome, ' + data.user.email + '! Click Start a New Game to play.')
   $('form').trigger('reset')
   store.user = data.user
-  eventGames.onCreateGame()
+  // eventGames.onCreateGame()
 }
 
 const onSignInFail = function () {
+  $('div.loggedin-view').hide()
+  $('div.frontlogin-view').show()
   $('#message').text('Sign in failed')
   $('form').trigger('reset')
 }

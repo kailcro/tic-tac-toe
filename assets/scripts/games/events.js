@@ -13,6 +13,7 @@ const onCreateGame = function (event) {
   // Clear the board visually
   $('div.square').html('')
   $('div.square').css('background-color', '')
+  $('#board div').on('click', onClicked)
   // Clear the variables associated with the board
   // need to clear both the cells and counter
   store.cells = ['', '', '', '', '', '', '', '', '']
@@ -49,6 +50,11 @@ const onClicked = function (event) {
     const cell = event.target.dataset.index
     const value = turn ? 'x' : 'o'
     store.cells[cell] = turn ? '🍕' : '🎱'
+    if (turn === true) {
+      $('#message').text("🎱's turn!")
+    } else {
+      $('#message').text("🍕's turn!")
+    }
     turn = !turn
     store.counterForDraw.push(cell)
     checkWinner()
@@ -166,6 +172,8 @@ const checkWinner = function () {
     $('#cell-8').css('background-color', 'green')
     store.over = true
     gameOver(store.over)
+  } else if (store.cells[0] !== '' && store.cells[1] !== '' && store.cells[2] !== '' && store.cells[3] !== '' && store.cells[4] !== '' && store.cells[5] !== '' && store.cells[6] !== '' && store.cells[7] !== '' && store.cells[8] !== '') {
+    $('#message').text("It's a tie!")
   } else {
     store.over = false
   }
@@ -174,6 +182,7 @@ const checkWinner = function () {
 // Function used to reset the board
 const gameOver = function (data) {
   console.log(`this is data in gaemOVer`, data)
+  $('#board div').off('click')
   return data
 }
 

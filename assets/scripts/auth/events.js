@@ -27,9 +27,6 @@ const onSwitchToSignIn = function () {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  $('div.loggedin-view').show()
-  $('div.frontlogin-view').hide()
-
   const form = event.target
   const data = getFormFields(form)
   api.signIn(data)

@@ -13,7 +13,6 @@ const createGame = function (data) {
 }
 
 const updateGame = function (cell, value, over) {
-  console.log(`this is store.over inside update game:`, store.over)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,
@@ -35,7 +34,7 @@ const updateGame = function (cell, value, over) {
 const indexGames = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games/',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
