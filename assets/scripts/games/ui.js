@@ -5,7 +5,6 @@ const createGameSuccess = function (data) {
   // console.log(`this is data inside create game success`, data)
   $('#message').text('Created your game successfully!')
   store.game = data.game
-  console.log(`this is store inside create game success`, store)
 }
 
 const createGameFail = function () {
@@ -14,21 +13,10 @@ const createGameFail = function () {
 }
 
 const indexSuccess = function (responseData) {
-  let gameHtml = ''
-  responseData.games.forEach(games => {
-    const oneGame = (`<h4>Game ID: ${games._id}<h4>`)
-    gameHtml += oneGame
-  })
-  $('#game-content').html(gameHtml)
-  $('#message').text('Index sucessful.').show()
-
   let xWinner = 0
   let oWinner = 0
+
   responseData.games.forEach(eachGame => {
-    // console.log(`this is eachGame`, eachGame)
-    // console.log(`this is eachGame.over`, eachGame.over)
-    // console.log(`this is eachGame.cells`, eachGame.cells)
-    // console.log(`this is eachGame.cells[0]`, eachGame.cells[0])
     if (eachGame.over === true && eachGame.cells[0] === 'x' && eachGame.cells[1] === 'x' && eachGame.cells[2] === 'x') {
       xWinner += 1
       return xWinner
@@ -84,8 +72,8 @@ const indexSuccess = function (responseData) {
 
 const gameStats = function (xWinner, oWinner) {
   // let totalGamesPlayed = xWinner + oWinner
-  $('#stats').text('🍕 has won ', xWinner, `games, and 🎱 has won `, oWinner, `games`)
-  console.log('🍕 has won ', xWinner, `games, and 🎱 has won `, oWinner, `games`)
+  // $('#stats').text('🍕 has won ', xWinner, `games, and 🎱 has won `, oWinner, `games`)
+  $('#stats').text(`🍕 has won ${xWinner} games, and 🎱 has won ${oWinner} games`)
 }
 
 const indexFail = function () {
@@ -108,17 +96,7 @@ const updateGameFail = function () {
 }
 
 const updateGameSuccess = function (data) {
-  // console.log('This is data inside updateGameSuccess', data)
-  // console.log('FUCKING PLEASEEEEE:', store.cells[cell])
-  // if (events.onClicked.event.target.innerHTML === true) {
-  // $('#message').text('yeet')
-  // } else if (turnForMessage === false) {
-  // $('#message').text('yeet')
-  // }
-  // turnForMessage = !turnForMessage
-
   store.game = data.game
-  // console.log(`this is data inside updateGameSuccess`, data)
 }
 
 module.exports = {

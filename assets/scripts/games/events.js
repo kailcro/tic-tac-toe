@@ -181,7 +181,6 @@ const checkWinner = function () {
 
 // Function used to reset the board
 const gameOver = function (data) {
-  console.log(`this is data in gaemOVer`, data)
   $('#board div').off('click')
   return data
 }

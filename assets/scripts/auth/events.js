@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields.js')
+const gameEvents = require('./../games/events.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -41,9 +42,11 @@ const onSwitchToSignUp = function () {
   $('div.signin-signup-toggle').show()
   $('div.signup-view').show()
 }
+
 const onShowChangePw = function () {
   $('div.changepassword-view').show()
 }
+
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
@@ -59,6 +62,10 @@ const onSignOut = function (event) {
   $('.changepassword-view').hide()
   $('div.frontlogin-view').show()
   $('#stats').hide()
+  // Clear the game board for next login:
+  $('div.square').html('')
+  $('div.square').css('background-color', '')
+  $('#board div').on('click', gameEvents.onClicked)
   const form = event.target
   const data = getFormFields(form)
   api.signOut(data)
