@@ -1,4 +1,4 @@
-# Tic-Tac-Toe: The timeless classic
+# Tic-Tac-Toe Project
 This application allows two players to play against eachother in a classic game of tic-tac-toe. This application prompts the user to either create an account, or login if they are a returning user. The user is then able to look back at the history of their game stats.
 
 This is my first time building a front end application that utilizes a backend API! :) Had some bumps along the way, but this was a great learning experience all around.
