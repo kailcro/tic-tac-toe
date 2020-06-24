@@ -41,19 +41,8 @@ const indexGames = function () {
   })
 }
 
-const showGame = function (gameID) {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/games/' + gameID.games.id,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 module.exports = {
   createGame,
   indexGames,
-  showGame,
   updateGame
 }

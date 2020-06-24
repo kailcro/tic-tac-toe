@@ -80,18 +80,6 @@ const gameStats = function (xWinner, oWinner) {
 const indexFail = function () {
   $('#message').text('Index failed.').show()
 }
-
-const showGameSuccess = function (responseData) {
-  const gameHtml = (`<h4>Game Id: ${responseData.game[0]._id}<h4>`)
-  $('#game-content').html(gameHtml)
-  $('form').trigger('reset')
-  $('#message').text('Getting one book was sucessful.').show()
-}
-
-const showGameFail = function () {
-  $('#message').text('Show one Game failed.').show()
-}
-
 const updateGameFail = function () {
   $('#message').text('Game move failed.').show()
 }
@@ -105,8 +93,6 @@ module.exports = {
   createGameFail,
   indexSuccess,
   indexFail,
-  showGameSuccess,
-  showGameFail,
   updateGameFail,
   updateGameSuccess
 }

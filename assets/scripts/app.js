@@ -18,6 +18,6 @@ $(() => {
   // Game Related:
   $('#games-create').on('click', gameEvents.onCreateGame)
   $('#games-index').on('click', gameEvents.onIndexGames)
-  $('#game-show').on('submit', gameEvents.onShowGame)
+  // $('#game-show').on('submit', gameEvents.onShowGame)
   $('#gameBoard').hide()
 })

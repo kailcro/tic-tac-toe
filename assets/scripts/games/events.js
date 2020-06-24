@@ -2,7 +2,6 @@
 
 const api = require('./api')
 const ui = require('./ui')
-const getFormFields = require('./../../../lib/get-form-fields.js')
 const store = require('./../store')
 
 // turn starts as true, which defaults to x
@@ -29,16 +28,6 @@ const onIndexGames = function (event) {
   api.indexGames()
     .then(ui.indexSuccess)
     .catch(ui.indexFail)
-}
-
-// Search for a game by ID
-const onShowGame = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.showGame(data)
-    .then(ui.showGameSuccess)
-    .catch(ui.showGameFail)
 }
 
 // Places the x and o on the board by clicking
@@ -188,7 +177,6 @@ const gameOver = function (data) {
 module.exports = {
   onCreateGame,
   onIndexGames,
-  onShowGame,
   onClicked,
   checkWinner
 }
