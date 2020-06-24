@@ -20,5 +20,4 @@ $(() => {
   $('#games-index').on('click', gameEvents.onIndexGames)
   $('#gameBoard').hide()
   $('#stats').hide()
-
 })
