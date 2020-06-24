@@ -69,6 +69,7 @@ const onSignOut = function (event) {
   $('div.frontlogin-view').show()
   $('#stats').hide()
   // Clear the game board for next login:
+  $('#gameBoard').hide()
   $('div.square').html('')
   $('div.square').css('background-color', '')
   $('#board div').on('click', gameEvents.onClicked)

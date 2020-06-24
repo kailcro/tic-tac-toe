@@ -74,6 +74,7 @@ const indexSuccess = function (responseData) {
 const gameStats = function (xWinner, oWinner) {
   // let totalGamesPlayed = xWinner + oWinner
   // $('#stats').text('🍕 has won ', xWinner, `games, and 🎱 has won `, oWinner, `games`)
+  $('#stats').show()
   $('#stats').text(`🍕 has won ${xWinner} games, and 🎱 has won ${oWinner} games`)
 }
 
