@@ -38,7 +38,7 @@ const onChangePasswordFail = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#message').text('Sign out complete')
+  $('#message').text('Sign in to play!')
 }
 
 const onSignOutFail = function () {
