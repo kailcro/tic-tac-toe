@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <div class="menu">
+        <div class="loggedin-view">
+              <section class="sign-out">
+                <button class="btn" id="sign-out">Sign Out</button>
+              </section>
+        </div>
+
+        <div class="loggedin-view">
+            <section class="get-game-stats">
+              <button class="btn" id="games-index">Get game stats</button>
+            </section>
+        </div>
+
+        <div class="loggedin-view">
+              <section class="show-changepassword">
+                <button class="btn" id="show-changepassword">Change Password</button>
+              </section>
+        </div>
+    </div>
+
+    <h1>Tic Tac Toe</h1>
+
+      <!-- The message below will note the status of the sign in/sign up process -->
+      <p id="message"></p>
+
+      <div class="loggedin-view">
+            <section class="games-create">
+              <div class="games-create">
+                <button class="start-new-game" id="games-create">Start a New Game</button>
+              </div>
+            </section>
+      </div>
+
+      <div class="signup-view">
+      <section class="sign-up">
+        <form id="sign-up">
+          <h4>Sign-Up:</h4>
+          <input name="credentials[email]" type="email" required placeholder="Email"><br>
+          <input name="credentials[password]" type="password" required placeholder="Password"><br>
+          <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
+          <br><br>
+          <button type="submit">Sign Up</button>
+        </form>
+      </section>
+    </div>
+<br>
+
+    <div class="signup-view">
+      <div class="signin-signup-toggle">
+        <button>Already a member?</button>
+      </div>
+    </div>
+
+
+    <div class="frontlogin-view">
+      <section class="sign-in">
+        <form id='sign-in'>
+          <h4>Sign-In:</h4>
+          <input name="credentials[email]" type="text" required placeholder="Email">
+          <input name="credentials[password]" type="password" required placeholder="Password">
+          <button type="submit" class="sign-in">Sign In</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="frontlogin-view">
+      <div class="move-to-signup">
+        <button>Not a member?</button>
+      </div>
+    </div>
+
+<div class="loggedin-view">
+      <div class="container" id="gameBoard">
+        <div class="row" id="board">
+          <div id="cell-0" class="col-4 square right bottom" data-index=0></div>
+          <div id="cell-1" class="col-4 square right bottom left" data-index=1></div>
+          <div id="cell-2" class="col-4 square bottom left" data-index=2></div>
+          <div id="cell-3" class="col-4 square right bottom top" data-index=3></div>
+          <div id="cell-4" class="col-4 square right bottom left top" data-index=4></div>
+          <div id="cell-5" class="col-4 square bottom left top" data-index=5></div>
+          <div id="cell-6" class="col-4 square right top" data-index=6></div>
+          <div id="cell-7" class="col-4 square right left top" data-index=7></div>
+          <div id="cell-8" class="col-4 square left top" data-index=8></div>
+        </div>
+      </div>
+</div>
+
+<br>
+
+<div class="changepassword-view">
+    <section class="change-password">
+      <form id="change-password">
+        <h4>Change Password:</h4>
+        <input name="passwords[old]" type="password" required placeholder="Old Password">
+        <input name="passwords[new]" type="password" required placeholder="New Password">
+        <button type="submit">Change Password</button>
+      </form>
+    </section>
+</div>
+
+<br>
+
+<p id="stats"></p>
+
+    </body>
+    <footer class="footer">Developer: Kailey Crothers | 2020
+    </footer>
+</html>
