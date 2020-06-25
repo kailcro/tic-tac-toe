@@ -18,7 +18,7 @@ With this project being my first front end application, I tried to be very metho
 - Javascript
 - Bootstrap
 - jQuery
-2
+
 ## Wireframes:
 ### Sign-In
 ![sign-in-view](https://i.imgur.com/R8Xf8RO.png)
