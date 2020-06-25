@@ -11,20 +11,38 @@
     </head>
 
     <body>
-      <h1>Tic Tac Toe</h1>
-      <div class="loggedin-view">
-            <section class="sign-out">
-              <button id="sign-out">Sign Out</button>
+      <div class="menu">
+        <div class="loggedin-view">
+              <section class="sign-out">
+                <button class="btn" id="sign-out">Sign Out</button>
+              </section>
+        </div>
+
+        <div class="loggedin-view">
+            <section class="get-game-stats">
+              <button class="btn" id="games-index">Get game stats</button>
             </section>
-      </div>
+        </div>
+
+        <div class="loggedin-view">
+              <section class="show-changepassword">
+                <button class="btn" id="show-changepassword">Change Password</button>
+              </section>
+        </div>
+    </div>
+
+    <h1>Tic Tac Toe</h1>
+
+      <!-- The message below will note the status of the sign in/sign up process -->
+      <p id="message"></p>
 
       <div class="loggedin-view">
             <section class="games-create">
-              <button id="games-create">Start a New Game</button>
+              <div class="games-create">
+                <button class="start-new-game" id="games-create">Start a New Game</button>
+              </div>
             </section>
       </div>
-      <!-- The message below will note the status of the sign in/sign up process -->
-      <p id="message"></p>
 
       <div class="signup-view">
       <section class="sign-up">
@@ -82,12 +100,6 @@
 
 <br>
 
-      <div class="loggedin-view">
-            <section class="show-changepassword">
-              <button id="show-changepassword">Change Password?</button>
-            </section>
-      </div>
-
 <div class="changepassword-view">
     <section class="change-password">
       <form id="change-password">
@@ -101,18 +113,9 @@
 
 <br>
 
-<div class="loggedin-view">
-    <section>
-      <button id="games-index">Get game stats</button>
-    </section>
-</div>
-
 <p id="stats"></p>
 
-
-<div class="loggedin-view">
-    <section id="game-content"></section>
-</div>
-
     </body>
+    <footer class="footer">Developer: Kailey Crothers | 2020
+    </footer>
 </html>

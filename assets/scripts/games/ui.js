@@ -5,6 +5,8 @@ const createGameSuccess = function (data) {
   // console.log(`this is data inside create game success`, data)
   $('#gameBoard').show()
   $('#message').text('Created your game successfully!')
+  $('#stats').hide()
+  $('div.changepassword-view').hide()
   store.game = data.game
 }
 

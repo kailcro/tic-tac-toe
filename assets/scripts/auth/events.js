@@ -50,6 +50,7 @@ const onSwitchToSignUp = function () {
 // Event when change PW is clicked
 const onShowChangePw = function () {
   $('div.changepassword-view').show()
+  // $('#change-password').show()
 }
 
 const onChangePassword = function (event) {
